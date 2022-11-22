@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Pocombats</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="styles/style.css">
+</html>
+
+<body>
+	<div id="jeu" class="row">
+		<div id="j1" class="col">
+			<div id="pb1" style="position: relative; left: 0px"></div>
+			<p>Name :</p>
+			<div id="name1"></div>
+			<p>HP :</p>
+			<div id="hp1"></div>
+			<p>stamina :</p>
+			<div id="stamina1"></div>
+			<img
+				src="https://sites.google.com/site/noiroroo/_/rsrc/1472847178163/classes/guerrier/Guerrier.jpg"
+				alt="Guerrier"
+				width="30px"
+				style="position: relative; top: 0px"
+			/>
+		</div>
+		<div id="j2" class="col">
+			<div id="pb2" style="position: relative; left: 0px"></div>
+			<div>Name :</div>
+			<div id="name2"></div>
+			<div>HP :</div>
+			<div id="hp2"></div>
+			<div>stamina :</div>
+			<div id="stamina2"></div>
+			<!-- MODIF SELECTCARD ICI -->
+			<img
+				src="https://sites.google.com/site/noiroroo/_/rsrc/1472847178163/classes/guerrier/Guerrier.jpg"  
+				alt="Guerrier"
+				width="30px"
+				style="position: relative; top: 0px"
+			/>
+		</div>
+		<div id="turn"></div>
+		<button id="1"></button>
+		<button id="2"></button>
+		<button id="3"></button>
+		<button id="4"></button>
+	</div>
+
+	<div id="choix">
+		<div class="Class-card-wrap">
+			<button class="card" id="mage"></button>
+		</div>
+		<div class="Class-card-wrap">
+			<button class="card" id="guerrier"></button>
+		</div>
+		<div class="Class-card-wrap">
+			<button class="card" id="tank"></button>
+		</div>
+	</div>
+</body>
+<link
+	rel="stylesheet"
+	href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css"
+/>
+<script
+	src="https://code.jquery.com/jquery-3.6.1.min.js"
+	integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ="
+	crossorigin="anonymous"
+></script>
+<script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+
+<script type="module" src="src/Personnage.js"></script>
+<script type="module" src="src/Guerrier.js"></script>
+<script type="module" src="src/Mage.js"></script>
+<script type="module" src="src/Tank.js"></script>
+<script type="module" src="src/Ui.js"></script>
+<script type="module" src="src/Spell.js"></script>
+<script type="module" src="src/app.js"></script>
