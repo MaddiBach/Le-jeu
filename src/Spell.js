@@ -1,4 +1,4 @@
-export class Spell {
+class Spell {
 	constructor(nom, damage, staminacost, castcallback) {
 		this.nom = nom;
 		this.damage = damage;
@@ -11,3 +11,5 @@ export class Spell {
 		this.castcallback(caster, target);
 	}
 }
+
+export { Spell };

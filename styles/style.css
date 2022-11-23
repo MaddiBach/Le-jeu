@@ -1,20 +1,18 @@
 * {
-    margin: 0;
-    padding: 0;
+	margin: 0;
+	padding: 0;
 }
 
-
 #choix {
-    display: flex;
-    flex-direction: row;
-    background-image: url("../assets/battleground.png");
-    background-size: cover;
-    background-position: center;
-    width: 100vw;
-    height: 100vh;
-    justify-content: space-around;
-    align-items: center;
-    background-color: #f5f5f5;
+	display: flex;
+	flex-direction: row;
+	background-size: cover;
+	background-position: center;
+	width: 100vw;
+	height: 100vh;
+	justify-content: space-around;
+	align-items: center;
+	background-color: #f5f5f5;
 }
 .card {
 	display: flex;
@@ -24,14 +22,14 @@
 	aspect-ratio: 12/15;
 	cursor: pointer;
 	position: relative;
-    border-radius: 20px;
-    border: none;
-    display:table-cell;
+	border-radius: 20px;
+	border: none;
+	display: table-cell;
 }
 .card:hover {
-    box-shadow: 5px 5px 20px #00000050, -5px -5px 15px #ffffff10;
-    transform: scale(1.05);
-    transition: transform 0.2s ease-in-out;
+	box-shadow: 5px 5px 20px #00000050, -5px -5px 15px #ffffff10;
+	transform: scale(1.05);
+	transition: transform 0.2s ease-in-out;
 }
 
 /* #mage {
@@ -62,138 +60,163 @@ h1 {
 	font-size: 3vw;
 }
 
-
-
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600;700;800;900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600;700;800;900&display=swap");
 
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: 'Poppins', sans-serif;
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: "Poppins", sans-serif;
 }
 
 .container {
-  position: relative;
-  width: 100%;
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 60px;
-  background: #222;
+	position: relative;
+	width: 100%;
+	min-height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	/* flex-wrap: wrap; */
+	flex-direction: row;
+	gap: 60px;
+	background: #222;
+}
+
+#attaques {
+	display: flex;
+	flex-direction: column;
+	height: 350px;
+	justify-content: space-around;
+	width: 10vw;
 }
 
 .card {
-  position: relative;
-  width: 300px;
-  height: 350px;
-  background: #2e2e2e;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+	position: relative;
+	width: 300px;
+	height: 350px;
+	background: #2e2e2e;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
 
 .card::before {
-  content: '';
-  position: absolute;
-  inset: -10px 50px;
-  border-top: 4px solid var(--color);
-  border-bottom: 4px solid var(--color);
-  transform: skewY(15deg);
-  transition: 0.5s ease-in-out;
+	content: "";
+	position: absolute;
+	inset: -10px 50px;
+	border-top: 2px inset var(--color);
+	border-bottom: 2px inset var(--color);
+	transform: skewY(15deg);
+	transition: 0.5s ease-in-out;
+	/* blur border*/
 }
 
-.card:hover::before {
-  inset: -10px 40px;
-  transform: skewY(0deg);
-}
+/* .card:hover::before {
+	inset: -10px 40px;
+	transform: skewY(0deg);
+} */
 
+.trigger::before {
+	inset: -10px 40px;
+	transform: skewY(0deg);
+}
 .card::after {
-  content: '';
-  position: absolute;
-  inset: 60px -10px;
-  border-left: 4px solid var(--color);
-  border-right: 4px solid var(--color);
-  transform: skew(15deg);
-  transition: 0.5s ease-in-out;
+	content: "";
+	position: absolute;
+	inset: 60px -10px;
+	border-left: 2px inset var(--color);
+	border-right: 2px inset var(--color);
+	transform: skew(15deg);
+	transition: 0.5s ease-in-out;
 }
 
-.card:hover::after {
-  inset: 40px -10px;
-  transform: skew(0deg);
+.trigger::after {
+	inset: 40px -10px;
+	transform: skewY(0deg);
 }
+/* .card:hover::after {
+	inset: 40px -10px;
+
+	transform: skew(0deg);
+} */
 
 .card .content {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  padding: 0 20px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  text-align: center;
-  background: #2e2e2e;
-  gap: 20px;
-  overflow: hidden;
-  z-index: 10;
+	position: relative;
+	width: 100%;
+	height: 100%;
+	padding: 0 20px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	text-align: center;
+	background: #2e2e2e;
+	gap: 20px;
+	overflow: hidden;
+	z-index: 10;
+	background-size: cover;
+	background-position: center;
 }
 
 .card .content .icon {
-  color: var(--color);
-  width: 80px;
-  height: 80px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 2.5rem;
-  background: #2e2e2e;
-  box-shadow: 0 0 0 4px #2e2e2e,
-    0 0 0 6px var(--color);
-  transition: 0.5s ease-in-out;
+	color: var(--color);
+	width: 80px;
+	height: 80px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 2.5rem;
+	background: #2e2e2e;
+	box-shadow: 0 0 0 4px #2e2e2e, 0 0 0 6px var(--color);
+	transition: 0.5s ease-in-out;
 }
 
 .card:hover .content .icon {
-  background: var(--color);
-  color: #2e2e2e;
-  box-shadow: 0 0 0 4px #2e2e2e,
-    0 0 0 300px var(--color);
+	background: var(--color);
+	color: #2e2e2e;
+	box-shadow: 0 0 0 4px #2e2e2e, 0 0 0 300px var(--color);
 }
 
 .card .content .text h3 {
-  color: #fff;
-  font-size: 1.5rem;
-  font-weight: 500;
-  transition: 0.5s ease-in-out;
+	color: #fff;
+	font-size: 1.5rem;
+	font-weight: 500;
+	transition: 0.5s ease-in-out;
 }
 
 .card:hover .content .text h3 {
-  color: #2e2e2e;
+	color: #2e2e2e;
 }
 
 .card .content .text p {
-  color: #999;
-  transition: 0.5s ease-in-out;
+	color: #999;
+	transition: 0.5s ease-in-out;
 }
 
 .card:hover .content .text p {
-  color: #2e2e2e;
+	color: #2e2e2e;
 }
 
 .card .content .text a {
-  position: relative;
-  display: inline-block;
-  background: var(--color);
-  color: #2e2e2e;
-  text-decoration: none;
-  font-weight: 500;
-  margin-block-start: 10px;
-  padding: 8px 15px;
+	position: relative;
+	display: inline-block;
+	background: var(--color);
+	color: #2e2e2e;
+	text-decoration: none;
+	font-weight: 500;
+	margin-block-start: 10px;
+	padding: 8px 15px;
 }
 
 .card:hover .content .text a {
-  background: #2e2e2e;
-  color: var(--color);
+	background: #2e2e2e;
+	color: var(--color);
+}
+
+.btn {
+	background: var(--color);
+	border-radius: 5px;
+	/* border-color: var(--color2) opacity(0.5); */
+	border: none;
+	height: 50px;
 }

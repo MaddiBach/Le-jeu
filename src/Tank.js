@@ -2,14 +2,15 @@ import { Personnage } from "./Personnage.js";
 import { Spell } from "./Spell.js";
 
 const imgstock = [
-	"../assets/tank1.png",
-	"../assets/tank2.png",
-	"../assets/tank3.png",
-	"../assets/tank4.png",
-	"../assets/tank5.png",
+	"../assets/Tanks/tank1.png",
+	"../assets/Tanks/tank2.png",
+	"../assets/Tanks/tank3.png",
+	"../assets/Tanks/tank4.png",
+	"../assets/Tanks/tank5.png",
+	"../assets/Tanks/tank6.png",
 ];
 
-export class Tank extends Personnage {
+class Tank extends Personnage {
 	attaques = [
 		new Spell("Rouler sur l'ennemi", 40, 10, () => {
 			console.log("*** Est-ce une boule ? ***");
@@ -21,12 +22,16 @@ export class Tank extends Personnage {
 			console.log("*** Bruit d'os qui se brisent ***");
 		}),
 	];
+	color = "rgba(0,150,0,0.2)";
 
 	constructor(name, id, img) {
 		super(name, id, img === undefined ? imgstock : [img]);
+		super.getcolor();
 
 		this.hp = 100;
 		this.stamina = 2000;
 		this.strength = 2;
 	}
 }
+
+export { Tank };
