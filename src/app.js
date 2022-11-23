@@ -1,7 +1,7 @@
 import { Guerrier } from "./Guerrier.js";
 import { Mage } from "./Mage.js";
 import { Tank } from "./Tank.js";
-import { changedisplaywithid, changevaluewithid } from "./Ui.js";
+import { changedisplaywithid } from "./Ui.js";
 
 let j1 = null;
 let j2 = null;
@@ -11,6 +11,9 @@ let personnages = {
 	Guerrier: new Guerrier("Connan"),
 	Mage: new Mage("Maximus"),
 	Tank: new Tank("Darius"),
+	// Guerrier2: new Guerrier("Connan"),
+	// Mage2: new Mage("Maximus"),
+	// Tank2: new Tank("Darius"),
 	// Ajouter d'autres personnages permet de les ajouter au choix automatiquement
 };
 let Ennemy = {
@@ -32,7 +35,8 @@ for (let key in personnages) {
 	}); // Ajouter le listener sur le bouton
 }
 
-$("#choix").style.backgroundImage = `url(../assets/Background/battleground${Math.floor(Math.random() * 3)}.jpg)`;
+$("#choix").css("background-image", `url(../assets/Background/battleground${Math.floor(Math.random() * 3) + 1}.png)`);
+$("#gamecontainer").css("background-image", $("#choix").css("background-image"));
 
 function startgame(classename) {
 	let keys = Object.keys(Ennemy); // ["Guerrier", "Mage", "Tank"]
@@ -41,8 +45,6 @@ function startgame(classename) {
 	j2 = Ennemy[keys[Math.floor(Math.random() * keys.length)]]; // Choix aleatoire
 
 	(j1.opponent = j2), (j2.opponent = j1); // Affecter les adversaires
-
-	console.log("Joueur 1 : " + j1.name + " - Joueur 2 : " + j2.name);
 
 	j1.afficherCoups(); // Afficher les coups du joueur 1 (le premier a jouer)
 	setattaquelistener(); // Ajouter les listeners sur les boutons d'attaque
@@ -56,8 +58,8 @@ function startgame(classename) {
 
 function playturn(choice) {
 	// Jouer le tour
-	console.log("Tour " + tour);
-	console.log("Joueur 1 : " + j1.hp + " - Joueur 2 : " + j2.hp);
+	// console.log("Tour " + tour);
+	// console.log("Joueur 1 : " + j1.hp + " - Joueur 2 : " + j2.hp);
 
 	let isodd = tour % 2 == 1; // Si le tour est impair, c'est le joueur 1 qui joue
 
@@ -81,7 +83,7 @@ function setattaquelistener() {
 }
 
 function createcard(p) {
-	return `<div class="card ${p.id == 1 ? "trigger" : ""}" id="card${p.id}" style="--color: ${p.color}">
+	return `<div class="card ${p.id == 1 ? "" : "trigger"}" id="card${p.id}" style="--color: ${p.color}">
 	<div class="content" style="background-image : url(${p.imgsrc});">
 		<div class="text">
 			<h3 id="name${p.id}">${p.name}</h3>

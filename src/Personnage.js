@@ -11,13 +11,13 @@ class Personnage {
 	attaques = [];
 	id = 1;
 	hexcolor = "#000000";
-	hexToRGB(hex, alpha) {
+	hexToRGB(hex, opacity) {
 		var r = parseInt(hex.slice(1, 3), 16),
 			g = parseInt(hex.slice(3, 5), 16),
 			b = parseInt(hex.slice(5, 7), 16);
 
-		if (alpha) {
-			return "rgba(" + r + ", " + g + ", " + b + ", " + alpha + ")";
+		if (opacity) {
+			return "rgba(" + r + ", " + g + ", " + b + ", " + opacity + ")";
 		} else {
 			return "rgb(" + r + ", " + g + ", " + b + ")";
 		}
@@ -50,7 +50,6 @@ class Personnage {
 	}
 
 	jouertour(choix) {
-		//
 		this.attaques[choix - 1].cast(this, this.opponent);
 	}
 
@@ -64,11 +63,12 @@ class Personnage {
 
 	set hp(value) {
 		this._hp = value;
+		changevaluewithid("hp" + this.id, "HP : " + value);
 	}
 
 	set stamina(value) {
 		this._stamina = value;
-		// changevaluewithid("stamina" + this.id, value);
+		changevaluewithid("stamina" + this.id, "Stamina : " + value);
 	}
 
 	afficherCoups() {
@@ -83,10 +83,8 @@ class Personnage {
 
 			i++;
 		}
-		console.log("Affichage des coups : this.id = " + this.id);
-		console.log(" ternaire = " + (this.id + (this.id == 1 ? 1 : -1)));
-		$("#card" + this.id).addClass("trigger");
-		$("#card" + (this.id + (this.id == 1 ? 1 : -1))).removeClass("trigger");
+		$("#card" + this.id).removeClass("trigger");
+		$("#card" + (this.id + (this.id == 1 ? 1 : -1))).addClass("trigger");
 	}
 }
 
