@@ -1,9 +1,15 @@
 import { Personnage } from "./Personnage.js";
 import { Spell } from "./Spell.js";
 
+const imgstock = [
+	"../assets/guerrier1.png",
+	"../assets/guerrier2.png",
+	"../assets/guerrier3.png",
+	"../assets/guerrier4.png",
+	"../assets/guerrier5.png",
+];
+
 export class Guerrier extends Personnage {
-	imgsrc =
-		"https://sites.google.com/site/noiroroo/_/rsrc/1472847178163/classes/guerrier/Guerrier.jpg";
 	attaques = [
 		new Spell("Hache tournoyante", 40, 10, () => {
 			console.log("*** FOIIUUUUU ***");
@@ -15,8 +21,10 @@ export class Guerrier extends Personnage {
 			console.log("*** WAW QUELLE FORCE !!!! ***");
 		}),
 	];
-	constructor(name, id) {
-		super(name, id);
+
+	constructor(name, id, img) {
+		super(name, id, img === undefined ? imgstock : [img]);
+
 		this.hp = 100;
 		this.stamina = 100;
 		this.strength = 15;
